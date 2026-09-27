@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Calculator | FinLit UAE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">FinLit UAE</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#tools">Tools</a>
+            <a href="index.html#learn">Learn</a>
+        </div>
+    </nav>
+
+    <!-- Savings Calculator -->
+    <main>
+
+        <section>
+            <div class="section-heading">
+                <p class="small-title">SAVINGS TOOL</p>
+
+                <h1>Reach your savings goal.</h1>
+
+                <p>
+                    Enter your goal, current savings and monthly
+                    contribution to see how long it could take.
+                </p>
+            </div>
+
+            <div class="calculator">
+
+                <label>
+                    Savings goal (AED)
+                    <input
+                        type="number"
+                        id="goal"
+                        placeholder="10000"
+                        min="0"
+                    >
+                </label>
+
+                <label>
+                    Already saved (AED)
+                    <input
+                        type="number"
+                        id="saved"
+                        placeholder="2000"
+                        min="0"
+                    >
+                </label>
+
+                <label>
+                    Monthly savings (AED)
+                    <input
+                        type="number"
+                        id="monthly"
+                        placeholder="500"
+                        min="0"
+                    >
+                </label>
+
+                <button onclick="calculateSavings()">
+                    Calculate savings
+                </button>
+
+            </div>
+
+            <div class="result">
+                <h3>Your result</h3>
+
+                <p>
+                    Amount left:
+                    <strong>
+                        AED <span id="remaining">0.00</span>
+                    </strong>
+                </p>
+
+                <p>
+                    Time needed:
+                    <strong>
+                        <span id="months">0</span> months
+                    </strong>
+                </p>
+
+                <p>
+                    Approximate time:
+                    <strong>
+                        <span id="years">0.0</span> years
+                    </strong>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>FinLit UAE</h3>
+
+        <p>
+            Financial literacy for the next generation.
+        </p>
+
+        <p class="copyright">
+            © 2026 Fatima Almazrouei
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
