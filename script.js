@@ -40,3 +40,30 @@ function calculateBudget() {
     document.getElementById("rate").textContent =
         savingsRate.toFixed(1);
 }
+function calculateSavings() {
+
+    const goal = Number(document.getElementById("goal").value);
+
+    const saved = Number(document.getElementById("saved").value);
+
+    const monthly = Number(document.getElementById("monthly").value);
+
+    const remaining = goal - saved;
+
+    let months = 0;
+
+    if (remaining > 0 && monthly > 0) {
+        months = Math.ceil(remaining / monthly);
+    }
+
+    const years = months / 12;
+
+    document.getElementById("remaining").textContent =
+        remaining.toFixed(2);
+
+    document.getElementById("months").textContent =
+        months;
+
+    document.getElementById("years").textContent =
+        years.toFixed(1);
+}
