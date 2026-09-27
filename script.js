@@ -1,20 +1,28 @@
 function calculateBudget() {
 
-    const income = Number(document.getElementById("income").value);
+    const income = parseFloat(
+        document.getElementById("income").value
+    ) || 0;
 
-    const food = Number(document.getElementById("food").value);
+    const food = parseFloat(
+        document.getElementById("food").value
+    ) || 0;
 
-    const shopping = Number(document.getElementById("shopping").value);
+    const shopping = parseFloat(
+        document.getElementById("shopping").value
+    ) || 0;
 
-    const transport = Number(document.getElementById("transport").value);
+    const transport = parseFloat(
+        document.getElementById("transport").value
+    ) || 0;
 
-    const entertainment = Number(
+    const entertainment = parseFloat(
         document.getElementById("entertainment").value
-    );
+    ) || 0;
 
-    const other = Number(
+    const other = parseFloat(
         document.getElementById("other").value
-    );
+    ) || 0;
 
     if (income <= 0) {
         alert("Please enter a valid monthly income.");
@@ -45,11 +53,17 @@ function calculateBudget() {
 
 function calculateSavings() {
 
-    const goal = Number(document.getElementById("goal").value);
+    const goal = parseFloat(
+        document.getElementById("goal").value
+    ) || 0;
 
-    const saved = Number(document.getElementById("saved").value);
+    const saved = parseFloat(
+        document.getElementById("saved").value
+    ) || 0;
 
-    const monthly = Number(document.getElementById("monthly").value);
+    const monthly = parseFloat(
+        document.getElementById("monthly").value
+    ) || 0;
 
     if (goal <= 0) {
         alert("Please enter a valid savings goal.");
@@ -84,21 +98,21 @@ function calculateSavings() {
 
 function calculateInvestment() {
 
-    const initial = Number(
+    const initial = parseFloat(
         document.getElementById("initial").value
-    );
+    ) || 0;
 
-    const contribution = Number(
+    const contribution = parseFloat(
         document.getElementById("contribution").value
-    );
+    ) || 0;
 
-    const annualRate = Number(
+    const annualRate = parseFloat(
         document.getElementById("returnRate").value
-    );
+    ) || 0;
 
-    const years = Number(
+    const years = parseFloat(
         document.getElementById("yearsInput").value
-    );
+    ) || 0;
 
     if (initial < 0 || contribution < 0) {
         alert("Investment amounts cannot be negative.");
@@ -106,7 +120,7 @@ function calculateInvestment() {
     }
 
     if (annualRate < 0) {
-        alert("Please enter a valid expected annual return.");
+        alert("Expected annual return cannot be negative.");
         return;
     }
 
@@ -115,16 +129,18 @@ function calculateInvestment() {
         return;
     }
 
-    const months = years * 12;
+    const months = Math.round(years * 12);
 
-    const monthlyRate = annualRate / 100 / 12;
+    const monthlyRate = (annualRate / 100) / 12;
 
     let finalValue = initial;
 
     for (let month = 1; month <= months; month++) {
+
         finalValue =
-            finalValue * (1 + monthlyRate) +
-            contribution;
+            finalValue * (1 + monthlyRate);
+
+        finalValue += contribution;
     }
 
     const totalContributed =
