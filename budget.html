@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget Calculator | FinLit UAE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">FinLit UAE</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="budget.html">Budget</a>
+            <a href="index.html#learn">Learn</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <section>
+
+            <div class="section-heading">
+
+                <p class="small-title">BUDGET CALCULATOR</p>
+
+                <h2>Where does your money go?</h2>
+
+                <p>
+                    Enter your monthly income and expenses
+                    to understand your spending.
+                </p>
+
+            </div>
+
+            <div class="calculator">
+
+                <label>
+                    Monthly income (AED)
+                    <input type="number" id="income" placeholder="5000">
+                </label>
+
+                <label>
+                    Food (AED)
+                    <input type="number" id="food" placeholder="500">
+                </label>
+
+                <label>
+                    Shopping (AED)
+                    <input type="number" id="shopping" placeholder="500">
+                </label>
+
+                <label>
+                    Transportation (AED)
+                    <input type="number" id="transport" placeholder="300">
+                </label>
+
+                <label>
+                    Entertainment (AED)
+                    <input type="number" id="entertainment" placeholder="300">
+                </label>
+
+                <label>
+                    Other expenses (AED)
+                    <input type="number" id="other" placeholder="200">
+                </label>
+
+                <button onclick="calculateBudget()">
+                    Calculate my budget
+                </button>
+
+            </div>
+
+            <div id="result" class="result">
+
+                <h3>Your results</h3>
+
+                <p>
+                    Total spending:
+                    <strong>AED <span id="total">0</span></strong>
+                </p>
+
+                <p>
+                    Money remaining:
+                    <strong>AED <span id="remaining">0</span></strong>
+                </p>
+
+                <p>
+                    Savings rate:
+                    <strong><span id="rate">0</span>%</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h3>FinLit UAE</h3>
+
+        <p>
+            Financial literacy for the next generation.
+        </p>
+
+        <p class="copyright">
+            © 2026 Fatima Almazrouei
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
