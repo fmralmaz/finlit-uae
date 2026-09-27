@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator | FinLit UAE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">FinLit UAE</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#tools">Tools</a>
+            <a href="index.html#learn">Learn</a>
+        </div>
+    </nav>
+
+    <!-- Investment Calculator -->
+    <main>
+
+        <section>
+            <div class="section-heading">
+                <p class="small-title">INVESTMENT TOOL</p>
+
+                <h1>See how your money could grow.</h1>
+
+                <p>
+                    Explore how an initial investment and regular
+                    contributions could grow over time.
+                </p>
+            </div>
+
+            <div class="calculator">
+
+                <label>
+                    Starting investment (AED)
+                    <input
+                        type="number"
+                        id="initial"
+                        placeholder="5000"
+                        min="0"
+                    >
+                </label>
+
+                <label>
+                    Monthly contribution (AED)
+                    <input
+                        type="number"
+                        id="contribution"
+                        placeholder="500"
+                        min="0"
+                    >
+                </label>
+
+                <label>
+                    Expected annual return (%)
+                    <input
+                        type="number"
+                        id="returnRate"
+                        placeholder="7"
+                        min="0"
+                        step="0.1"
+                    >
+                </label>
+
+                <label>
+                    Investment period (years)
+                    <input
+                        type="number"
+                        id="yearsInput"
+                        placeholder="10"
+                        min="1"
+                    >
+                </label>
+
+                <button onclick="calculateInvestment()">
+                    Calculate growth
+                </button>
+
+            </div>
+
+            <div class="result">
+                <h3>Estimated result</h3>
+
+                <p>
+                    Total contributed:
+                    <strong>
+                        AED <span id="contributed">0.00</span>
+                    </strong>
+                </p>
+
+                <p>
+                    Estimated growth:
+                    <strong>
+                        AED <span id="growth">0.00</span>
+                    </strong>
+                </p>
+
+                <p>
+                    Estimated final value:
+                    <strong>
+                        AED <span id="finalValue">0.00</span>
+                    </strong>
+                </p>
+
+                <p>
+                    <strong>
+                        This is an estimate, not a guaranteed return.
+                    </strong>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>FinLit UAE</h3>
+
+        <p>
+            Financial literacy for the next generation.
+        </p>
+
+        <p class="copyright">
+            © 2026 Fatima Almazrouei
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
