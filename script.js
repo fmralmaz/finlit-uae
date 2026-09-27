@@ -16,6 +16,11 @@ function calculateBudget() {
         document.getElementById("other").value
     );
 
+    if (income <= 0) {
+        alert("Please enter a valid monthly income.");
+        return;
+    }
+
     const total =
         food +
         shopping +
@@ -25,11 +30,7 @@ function calculateBudget() {
 
     const remaining = income - total;
 
-    let savingsRate = 0;
-
-    if (income > 0) {
-        savingsRate = (remaining / income) * 100;
-    }
+    const savingsRate = (remaining / income) * 100;
 
     document.getElementById("total").textContent =
         total.toFixed(2);
@@ -40,6 +41,8 @@ function calculateBudget() {
     document.getElementById("rate").textContent =
         savingsRate.toFixed(1);
 }
+
+
 function calculateSavings() {
 
     const goal = Number(document.getElementById("goal").value);
@@ -48,7 +51,17 @@ function calculateSavings() {
 
     const monthly = Number(document.getElementById("monthly").value);
 
-    const remaining = goal - saved;
+    if (goal <= 0) {
+        alert("Please enter a valid savings goal.");
+        return;
+    }
+
+    if (saved < 0 || monthly < 0) {
+        alert("Savings amounts cannot be negative.");
+        return;
+    }
+
+    const remaining = Math.max(goal - saved, 0);
 
     let months = 0;
 
@@ -67,6 +80,8 @@ function calculateSavings() {
     document.getElementById("years").textContent =
         years.toFixed(1);
 }
+
+
 function calculateInvestment() {
 
     const initial = Number(
@@ -84,6 +99,21 @@ function calculateInvestment() {
     const years = Number(
         document.getElementById("yearsInput").value
     );
+
+    if (initial < 0 || contribution < 0) {
+        alert("Investment amounts cannot be negative.");
+        return;
+    }
+
+    if (annualRate < 0) {
+        alert("Please enter a valid expected annual return.");
+        return;
+    }
+
+    if (years <= 0) {
+        alert("Please enter a valid investment period.");
+        return;
+    }
 
     const months = years * 12;
 
