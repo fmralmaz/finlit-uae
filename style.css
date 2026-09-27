@@ -128,6 +128,7 @@ section {
     margin-bottom: 12px;
 }
 
+.section-heading h1,
 .section-heading h2 {
     font-size: 42px;
     letter-spacing: -1.5px;
@@ -136,6 +137,20 @@ section {
 
 .section-heading > p:last-child {
     color: #6b7280;
+}
+
+/* Back Link */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
 
 /* Tools */
@@ -237,44 +252,7 @@ footer .copyright {
     font-size: 13px;
 }
 
-/* Mobile */
-
-@media (max-width: 800px) {
-
-    nav {
-        padding: 0 5%;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    header {
-        padding: 70px 7%;
-        min-height: 550px;
-    }
-
-    .hero-content h1 {
-        letter-spacing: -2px;
-    }
-
-    main {
-        padding: 70px 7%;
-    }
-
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .learn-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading h2 {
-        font-size: 34px;
-    }
-}
-/* Budget Calculator */
+/* Calculator */
 
 .calculator {
     max-width: 650px;
@@ -336,6 +314,7 @@ footer .copyright {
 .result p {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -346,4 +325,48 @@ footer .copyright {
 
 .result strong {
     font-weight: 700;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    header {
+        padding: 70px 7%;
+        min-height: 550px;
+    }
+
+    .hero-content h1 {
+        letter-spacing: -2px;
+    }
+
+    main {
+        padding: 70px 7%;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h1,
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .result p {
+        flex-direction: column;
+        gap: 3px;
+    }
 }
