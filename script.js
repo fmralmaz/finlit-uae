@@ -67,3 +67,48 @@ function calculateSavings() {
     document.getElementById("years").textContent =
         years.toFixed(1);
 }
+function calculateInvestment() {
+
+    const initial = Number(
+        document.getElementById("initial").value
+    );
+
+    const contribution = Number(
+        document.getElementById("contribution").value
+    );
+
+    const annualRate = Number(
+        document.getElementById("returnRate").value
+    );
+
+    const years = Number(
+        document.getElementById("yearsInput").value
+    );
+
+    const months = years * 12;
+
+    const monthlyRate = annualRate / 100 / 12;
+
+    let finalValue = initial;
+
+    for (let month = 1; month <= months; month++) {
+        finalValue =
+            finalValue * (1 + monthlyRate) +
+            contribution;
+    }
+
+    const totalContributed =
+        initial + (contribution * months);
+
+    const growth =
+        finalValue - totalContributed;
+
+    document.getElementById("contributed").textContent =
+        totalContributed.toFixed(2);
+
+    document.getElementById("growth").textContent =
+        growth.toFixed(2);
+
+    document.getElementById("finalValue").textContent =
+        finalValue.toFixed(2);
+}
